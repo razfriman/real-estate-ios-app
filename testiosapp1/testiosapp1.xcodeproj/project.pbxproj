@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80780FC1B9A0E4600D04150 /* AppDelegate.swift */; };
-		F80780FF1B9A0E4600D04150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80780FE1B9A0E4600D04150 /* ViewController.swift */; };
+		F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80780FE1B9A0E4600D04150 /* LoginViewController.swift */; };
 		F80781021B9A0E4600D04150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80781001B9A0E4600D04150 /* Main.storyboard */; };
 		F80781041B9A0E4600D04150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80781031B9A0E4600D04150 /* Images.xcassets */; };
 		F80781071B9A0E4600D04150 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80781051B9A0E4600D04150 /* LaunchScreen.xib */; };
 		F80781131B9A0E4600D04150 /* testiosapp1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80781121B9A0E4600D04150 /* testiosapp1Tests.swift */; };
+		F8C479A11BA60FA700571091 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */; };
+		F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A21BA60FB800571091 /* SignupViewController.swift */; };
+		F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A41BA6139000571091 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +32,16 @@
 		F80780F71B9A0E4600D04150 /* testiosapp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testiosapp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80780FB1B9A0E4600D04150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F80780FC1B9A0E4600D04150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F80780FE1B9A0E4600D04150 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F80780FE1B9A0E4600D04150 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F80781011B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F80781031B9A0E4600D04150 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F80781061B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F807810C1B9A0E4600D04150 /* testiosapp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testiosapp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80781111B9A0E4600D04150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F80781121B9A0E4600D04150 /* testiosapp1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testiosapp1Tests.swift; sourceTree = "<group>"; };
+		F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		F8C479A21BA60FB800571091 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		F8C479A41BA6139000571091 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,11 @@
 		F80780F91B9A0E4600D04150 /* testiosapp1 */ = {
 			isa = PBXGroup;
 			children = (
+				F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */,
 				F80780FC1B9A0E4600D04150 /* AppDelegate.swift */,
-				F80780FE1B9A0E4600D04150 /* ViewController.swift */,
+				F80780FE1B9A0E4600D04150 /* LoginViewController.swift */,
+				F8C479A21BA60FB800571091 /* SignupViewController.swift */,
+				F8C479A41BA6139000571091 /* ProfileViewController.swift */,
 				F80781001B9A0E4600D04150 /* Main.storyboard */,
 				F80781031B9A0E4600D04150 /* Images.xcassets */,
 				F80781051B9A0E4600D04150 /* LaunchScreen.xib */,
@@ -212,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80780FF1B9A0E4600D04150 /* ViewController.swift in Sources */,
+				F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */,
 				F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */,
+				F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */,
+				F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */,
+				F8C479A11BA60FA700571091 /* ForgotPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +421,7 @@
 				F80781181B9A0E4600D04150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F80781191B9A0E4600D04150 /* Build configuration list for PBXNativeTarget "testiosapp1Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +430,7 @@
 				F807811B1B9A0E4600D04150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
