@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8024FDB1BA6FE0C00A46DE3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */; };
+		F8024FDD1BA6FE7700A46DE3 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024FDC1BA6FE7700A46DE3 /* RestApiManager.swift */; };
+		F8024FDF1BA6FECB00A46DE3 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */; };
 		F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80780FC1B9A0E4600D04150 /* AppDelegate.swift */; };
 		F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80780FE1B9A0E4600D04150 /* LoginViewController.swift */; };
 		F80781021B9A0E4600D04150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80781001B9A0E4600D04150 /* Main.storyboard */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		F8024FDC1BA6FE7700A46DE3 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
+		F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesViewController.swift; sourceTree = "<group>"; };
 		F80780F71B9A0E4600D04150 /* testiosapp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testiosapp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80780FB1B9A0E4600D04150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F80780FC1B9A0E4600D04150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 		F80780EE1B9A0E4600D04150 = {
 			isa = PBXGroup;
 			children = (
+				F8024FDC1BA6FE7700A46DE3 /* RestApiManager.swift */,
 				F80780F91B9A0E4600D04150 /* testiosapp1 */,
 				F807810F1B9A0E4600D04150 /* testiosapp1Tests */,
 				F80780F81B9A0E4600D04150 /* Products */,
@@ -92,6 +99,8 @@
 				F80781031B9A0E4600D04150 /* Images.xcassets */,
 				F80781051B9A0E4600D04150 /* LaunchScreen.xib */,
 				F80780FA1B9A0E4600D04150 /* Supporting Files */,
+				F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */,
+				F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */,
 			);
 			path = testiosapp1;
 			sourceTree = "<group>";
@@ -224,7 +233,10 @@
 				F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */,
 				F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */,
 				F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */,
+				F8024FDB1BA6FE0C00A46DE3 /* SwiftyJSON.swift in Sources */,
 				F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */,
+				F8024FDF1BA6FECB00A46DE3 /* PropertiesViewController.swift in Sources */,
+				F8024FDD1BA6FE7700A46DE3 /* RestApiManager.swift in Sources */,
 				F8C479A11BA60FA700571091 /* ForgotPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
