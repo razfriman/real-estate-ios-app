@@ -26,8 +26,10 @@ class SignupViewController: UIViewController {
         
         // TODO - DECIDE -- Go to login screen, or directly log in with the newly created account??
         performSegueWithIdentifier("signupDoneSegue", sender: self)
-        
-        
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 

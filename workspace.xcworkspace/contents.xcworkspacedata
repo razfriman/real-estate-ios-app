@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:testiosapp1/testiosapp1.xcodeproj">
+      location = "group:testiosapp1/MyRealEstate.xcodeproj">
    </FileRef>
 </Workspace>

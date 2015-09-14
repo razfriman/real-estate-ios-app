@@ -1,5 +1,5 @@
 //
-//  RestApiManager.swift
+//  DummyApiManager
 //  testiosapp1
 //
 //  Created by Raz Friman on 9/14/15.
@@ -10,8 +10,8 @@ import Foundation
 
 typealias ServiceResponse = (JSON, NSError?) -> Void
 
-class RestApiManager: NSObject {
-    static let sharedInstance = RestApiManager()
+class DummyApiManager: NSObject {
+    static let sharedInstance = DummyApiManager()
     
     let baseURL = "http://api.randomuser.me/"
     
@@ -28,25 +28,8 @@ class RestApiManager: NSObject {
         let session = NSURLSession.sharedSession()
         
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            let json:JSON = JSON(data: data)
+            let json:JSON = JSON(data: data!)
             onCompletion(json, error)
-        })
-        task.resume()
-    }
-    
-    func makeHTTPPostRequest(path: String, body: [String: AnyObject], onCompletion: ServiceResponse) {
-        var err: NSError?
-        let request = NSMutableURLRequest(URL: NSURL(string: path)!)
-        
-        request.HTTPMethod = "POST"
-        
-        // Set the POST body for the request
-        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(body, options: nil, error: &err)
-        let session = NSURLSession.sharedSession()
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            let json:JSON = JSON(data: data)
-            onCompletion(json, err)
         })
         task.resume()
     }

@@ -30,19 +30,19 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func addDummyData() {
-        RestApiManager.sharedInstance.getRandomUser { json in
+        DummyApiManager.sharedInstance.getRandomUser { json in
             let results = json["results"]
             
-            for (index: String, subJson: JSON) in results {
+            //for (index: String, subJson: JSON) in results {
                 
-                let user: AnyObject = subJson["user"].object
+              //  let user: AnyObject = subJson["user"].object
                 
-                self.items.addObject(user)
+                //self.items.addObject(user)
                 
-                dispatch_async(dispatch_get_main_queue(),{
-                    tableView?.reloadData()
-                })
-            }
+//                dispatch_async(dispatch_get_main_queue(),{
+  //                  tableView?.reloadData()
+    //            })
+      //      }
         }
     }
     
@@ -51,7 +51,7 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("CELL")
         
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "CELL")

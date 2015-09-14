@@ -8,43 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		F8024FDB1BA6FE0C00A46DE3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */; };
-		F8024FDD1BA6FE7700A46DE3 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024FDC1BA6FE7700A46DE3 /* RestApiManager.swift */; };
 		F8024FDF1BA6FECB00A46DE3 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */; };
 		F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80780FC1B9A0E4600D04150 /* AppDelegate.swift */; };
 		F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80780FE1B9A0E4600D04150 /* LoginViewController.swift */; };
 		F80781021B9A0E4600D04150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80781001B9A0E4600D04150 /* Main.storyboard */; };
 		F80781041B9A0E4600D04150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80781031B9A0E4600D04150 /* Images.xcassets */; };
 		F80781071B9A0E4600D04150 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80781051B9A0E4600D04150 /* LaunchScreen.xib */; };
-		F80781131B9A0E4600D04150 /* testiosapp1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80781121B9A0E4600D04150 /* testiosapp1Tests.swift */; };
+		F888E6ED1BA7651D0041F1B2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */; };
+		F888E6EE1BA7651D0041F1B2 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E01BA7651D0041F1B2 /* Download.swift */; };
+		F888E6EF1BA7651D0041F1B2 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E11BA7651D0041F1B2 /* Error.swift */; };
+		F888E6F01BA7651D0041F1B2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F888E6E21BA7651D0041F1B2 /* Info.plist */; };
+		F888E6F11BA7651D0041F1B2 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E31BA7651D0041F1B2 /* Manager.swift */; };
+		F888E6F21BA7651D0041F1B2 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E41BA7651D0041F1B2 /* MultipartFormData.swift */; };
+		F888E6F31BA7651D0041F1B2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E51BA7651D0041F1B2 /* ParameterEncoding.swift */; };
+		F888E6F41BA7651D0041F1B2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E61BA7651D0041F1B2 /* Request.swift */; };
+		F888E6F51BA7651D0041F1B2 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E71BA7651D0041F1B2 /* ResponseSerialization.swift */; };
+		F888E6F61BA7651D0041F1B2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E81BA7651D0041F1B2 /* Result.swift */; };
+		F888E6F71BA7651D0041F1B2 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E91BA7651D0041F1B2 /* ServerTrustPolicy.swift */; };
+		F888E6F81BA7651D0041F1B2 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6EA1BA7651D0041F1B2 /* Stream.swift */; };
+		F888E6F91BA7651D0041F1B2 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6EB1BA7651D0041F1B2 /* Upload.swift */; };
+		F888E6FA1BA7651D0041F1B2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6EC1BA7651D0041F1B2 /* Validation.swift */; };
+		F89F67D01BA7640D0064A7B6 /* DummyApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F67CE1BA7640D0064A7B6 /* DummyApiManager.swift */; };
+		F89F67D11BA7640D0064A7B6 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F67CF1BA7640D0064A7B6 /* RestApiManager.swift */; };
 		F8C479A11BA60FA700571091 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */; };
 		F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A21BA60FB800571091 /* SignupViewController.swift */; };
 		F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A41BA6139000571091 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F807810D1B9A0E4600D04150 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F80780EF1B9A0E4600D04150 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F80780F61B9A0E4600D04150;
-			remoteInfo = testiosapp1;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		F8024FDC1BA6FE7700A46DE3 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesViewController.swift; sourceTree = "<group>"; };
-		F80780F71B9A0E4600D04150 /* testiosapp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testiosapp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80780F71B9A0E4600D04150 /* MyRealEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRealEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80780FB1B9A0E4600D04150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F80780FC1B9A0E4600D04150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F80780FE1B9A0E4600D04150 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F80781011B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F80781031B9A0E4600D04150 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F80781061B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		F807810C1B9A0E4600D04150 /* testiosapp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testiosapp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F80781111B9A0E4600D04150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F80781121B9A0E4600D04150 /* testiosapp1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testiosapp1Tests.swift; sourceTree = "<group>"; };
+		F888E6DE1BA7651D0041F1B2 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alamofire.h; path = AlamoFire/Alamofire.h; sourceTree = "<group>"; };
+		F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = AlamoFire/Alamofire.swift; sourceTree = "<group>"; };
+		F888E6E01BA7651D0041F1B2 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = AlamoFire/Download.swift; sourceTree = "<group>"; };
+		F888E6E11BA7651D0041F1B2 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = AlamoFire/Error.swift; sourceTree = "<group>"; };
+		F888E6E21BA7651D0041F1B2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AlamoFire/Info.plist; sourceTree = "<group>"; };
+		F888E6E31BA7651D0041F1B2 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = AlamoFire/Manager.swift; sourceTree = "<group>"; };
+		F888E6E41BA7651D0041F1B2 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = AlamoFire/MultipartFormData.swift; sourceTree = "<group>"; };
+		F888E6E51BA7651D0041F1B2 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = AlamoFire/ParameterEncoding.swift; sourceTree = "<group>"; };
+		F888E6E61BA7651D0041F1B2 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = AlamoFire/Request.swift; sourceTree = "<group>"; };
+		F888E6E71BA7651D0041F1B2 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = AlamoFire/ResponseSerialization.swift; sourceTree = "<group>"; };
+		F888E6E81BA7651D0041F1B2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = AlamoFire/Result.swift; sourceTree = "<group>"; };
+		F888E6E91BA7651D0041F1B2 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = AlamoFire/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		F888E6EA1BA7651D0041F1B2 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = AlamoFire/Stream.swift; sourceTree = "<group>"; };
+		F888E6EB1BA7651D0041F1B2 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = AlamoFire/Upload.swift; sourceTree = "<group>"; };
+		F888E6EC1BA7651D0041F1B2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = AlamoFire/Validation.swift; sourceTree = "<group>"; };
+		F89F67CE1BA7640D0064A7B6 /* DummyApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyApiManager.swift; sourceTree = "<group>"; };
+		F89F67CF1BA7640D0064A7B6 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		F8C479A21BA60FB800571091 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		F8C479A41BA6139000571091 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -58,38 +75,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F80781091B9A0E4600D04150 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35D3F57B3B00F4DD15499501 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F80780EE1B9A0E4600D04150 = {
 			isa = PBXGroup;
 			children = (
-				F8024FDC1BA6FE7700A46DE3 /* RestApiManager.swift */,
-				F80780F91B9A0E4600D04150 /* testiosapp1 */,
-				F807810F1B9A0E4600D04150 /* testiosapp1Tests */,
+				F888E6DD1BA765110041F1B2 /* AlamoFire */,
+				F80780F91B9A0E4600D04150 /* MyRealEstate */,
 				F80780F81B9A0E4600D04150 /* Products */,
+				35D3F57B3B00F4DD15499501 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		F80780F81B9A0E4600D04150 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F80780F71B9A0E4600D04150 /* testiosapp1.app */,
-				F807810C1B9A0E4600D04150 /* testiosapp1Tests.xctest */,
+				F80780F71B9A0E4600D04150 /* MyRealEstate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F80780F91B9A0E4600D04150 /* testiosapp1 */ = {
+		F80780F91B9A0E4600D04150 /* MyRealEstate */ = {
 			isa = PBXGroup;
 			children = (
+				F89F67CE1BA7640D0064A7B6 /* DummyApiManager.swift */,
+				F89F67CF1BA7640D0064A7B6 /* RestApiManager.swift */,
 				F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */,
 				F80780FC1B9A0E4600D04150 /* AppDelegate.swift */,
 				F80780FE1B9A0E4600D04150 /* LoginViewController.swift */,
@@ -102,6 +120,7 @@
 				F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */,
 				F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */,
 			);
+			name = MyRealEstate;
 			path = testiosapp1;
 			sourceTree = "<group>";
 		};
@@ -113,29 +132,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F807810F1B9A0E4600D04150 /* testiosapp1Tests */ = {
+		F888E6DD1BA765110041F1B2 /* AlamoFire */ = {
 			isa = PBXGroup;
 			children = (
-				F80781121B9A0E4600D04150 /* testiosapp1Tests.swift */,
-				F80781101B9A0E4600D04150 /* Supporting Files */,
+				F888E6DE1BA7651D0041F1B2 /* Alamofire.h */,
+				F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */,
+				F888E6E01BA7651D0041F1B2 /* Download.swift */,
+				F888E6E11BA7651D0041F1B2 /* Error.swift */,
+				F888E6E21BA7651D0041F1B2 /* Info.plist */,
+				F888E6E31BA7651D0041F1B2 /* Manager.swift */,
+				F888E6E41BA7651D0041F1B2 /* MultipartFormData.swift */,
+				F888E6E51BA7651D0041F1B2 /* ParameterEncoding.swift */,
+				F888E6E61BA7651D0041F1B2 /* Request.swift */,
+				F888E6E71BA7651D0041F1B2 /* ResponseSerialization.swift */,
+				F888E6E81BA7651D0041F1B2 /* Result.swift */,
+				F888E6E91BA7651D0041F1B2 /* ServerTrustPolicy.swift */,
+				F888E6EA1BA7651D0041F1B2 /* Stream.swift */,
+				F888E6EB1BA7651D0041F1B2 /* Upload.swift */,
+				F888E6EC1BA7651D0041F1B2 /* Validation.swift */,
 			);
-			path = testiosapp1Tests;
-			sourceTree = "<group>";
-		};
-		F80781101B9A0E4600D04150 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F80781111B9A0E4600D04150 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = AlamoFire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F80780F61B9A0E4600D04150 /* testiosapp1 */ = {
+		F80780F61B9A0E4600D04150 /* MyRealEstate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F80781161B9A0E4600D04150 /* Build configuration list for PBXNativeTarget "testiosapp1" */;
+			buildConfigurationList = F80781161B9A0E4600D04150 /* Build configuration list for PBXNativeTarget "MyRealEstate" */;
 			buildPhases = (
 				F80780F31B9A0E4600D04150 /* Sources */,
 				F80780F41B9A0E4600D04150 /* Frameworks */,
@@ -145,28 +169,10 @@
 			);
 			dependencies = (
 			);
-			name = testiosapp1;
+			name = MyRealEstate;
 			productName = testiosapp1;
-			productReference = F80780F71B9A0E4600D04150 /* testiosapp1.app */;
+			productReference = F80780F71B9A0E4600D04150 /* MyRealEstate.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F807810B1B9A0E4600D04150 /* testiosapp1Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F80781191B9A0E4600D04150 /* Build configuration list for PBXNativeTarget "testiosapp1Tests" */;
-			buildPhases = (
-				F80781081B9A0E4600D04150 /* Sources */,
-				F80781091B9A0E4600D04150 /* Frameworks */,
-				F807810A1B9A0E4600D04150 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F807810E1B9A0E4600D04150 /* PBXTargetDependency */,
-			);
-			name = testiosapp1Tests;
-			productName = testiosapp1Tests;
-			productReference = F807810C1B9A0E4600D04150 /* testiosapp1Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -174,19 +180,17 @@
 		F80780EF1B9A0E4600D04150 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Raz Friman";
 				TargetAttributes = {
 					F80780F61B9A0E4600D04150 = {
 						CreatedOnToolsVersion = 6.3;
 					};
-					F807810B1B9A0E4600D04150 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = F80780F61B9A0E4600D04150;
-					};
 				};
 			};
-			buildConfigurationList = F80780F21B9A0E4600D04150 /* Build configuration list for PBXProject "testiosapp1" */;
+			buildConfigurationList = F80780F21B9A0E4600D04150 /* Build configuration list for PBXProject "MyRealEstate" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -199,8 +203,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F80780F61B9A0E4600D04150 /* testiosapp1 */,
-				F807810B1B9A0E4600D04150 /* testiosapp1Tests */,
+				F80780F61B9A0E4600D04150 /* MyRealEstate */,
 			);
 		};
 /* End PBXProject section */
@@ -212,14 +215,8 @@
 			files = (
 				F80781021B9A0E4600D04150 /* Main.storyboard in Resources */,
 				F80781071B9A0E4600D04150 /* LaunchScreen.xib in Resources */,
+				F888E6F01BA7651D0041F1B2 /* Info.plist in Resources */,
 				F80781041B9A0E4600D04150 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F807810A1B9A0E4600D04150 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,34 +227,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F888E6F91BA7651D0041F1B2 /* Upload.swift in Sources */,
+				F888E6F61BA7651D0041F1B2 /* Result.swift in Sources */,
+				F888E6FA1BA7651D0041F1B2 /* Validation.swift in Sources */,
 				F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */,
+				F888E6F41BA7651D0041F1B2 /* Request.swift in Sources */,
+				F888E6F71BA7651D0041F1B2 /* ServerTrustPolicy.swift in Sources */,
+				F89F67D01BA7640D0064A7B6 /* DummyApiManager.swift in Sources */,
+				F888E6F21BA7651D0041F1B2 /* MultipartFormData.swift in Sources */,
+				F888E6EE1BA7651D0041F1B2 /* Download.swift in Sources */,
+				F89F67D11BA7640D0064A7B6 /* RestApiManager.swift in Sources */,
+				F888E6EF1BA7651D0041F1B2 /* Error.swift in Sources */,
 				F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */,
 				F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */,
+				F888E6F51BA7651D0041F1B2 /* ResponseSerialization.swift in Sources */,
+				F888E6F11BA7651D0041F1B2 /* Manager.swift in Sources */,
 				F8024FDB1BA6FE0C00A46DE3 /* SwiftyJSON.swift in Sources */,
+				F888E6ED1BA7651D0041F1B2 /* Alamofire.swift in Sources */,
 				F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */,
+				F888E6F31BA7651D0041F1B2 /* ParameterEncoding.swift in Sources */,
 				F8024FDF1BA6FECB00A46DE3 /* PropertiesViewController.swift in Sources */,
-				F8024FDD1BA6FE7700A46DE3 /* RestApiManager.swift in Sources */,
 				F8C479A11BA60FA700571091 /* ForgotPasswordViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F80781081B9A0E4600D04150 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F80781131B9A0E4600D04150 /* testiosapp1Tests.swift in Sources */,
+				F888E6F81BA7651D0041F1B2 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F807810E1B9A0E4600D04150 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F80780F61B9A0E4600D04150 /* testiosapp1 */;
-			targetProxy = F807810D1B9A0E4600D04150 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F80781001B9A0E4600D04150 /* Main.storyboard */ = {
@@ -300,6 +295,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -366,7 +362,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = testiosapp1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "razfriman.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = MyRealEstate;
 			};
 			name = Debug;
 		};
@@ -376,48 +373,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = testiosapp1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		F807811A1B9A0E4600D04150 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = testiosapp1Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testiosapp1.app/testiosapp1";
-			};
-			name = Debug;
-		};
-		F807811B1B9A0E4600D04150 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = testiosapp1Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testiosapp1.app/testiosapp1";
+				PRODUCT_BUNDLE_IDENTIFIER = "razfriman.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = MyRealEstate;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F80780F21B9A0E4600D04150 /* Build configuration list for PBXProject "testiosapp1" */ = {
+		F80780F21B9A0E4600D04150 /* Build configuration list for PBXProject "MyRealEstate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F80781141B9A0E4600D04150 /* Debug */,
@@ -426,20 +390,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F80781161B9A0E4600D04150 /* Build configuration list for PBXNativeTarget "testiosapp1" */ = {
+		F80781161B9A0E4600D04150 /* Build configuration list for PBXNativeTarget "MyRealEstate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F80781171B9A0E4600D04150 /* Debug */,
 				F80781181B9A0E4600D04150 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F80781191B9A0E4600D04150 /* Build configuration list for PBXNativeTarget "testiosapp1Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F807811A1B9A0E4600D04150 /* Debug */,
-				F807811B1B9A0E4600D04150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
