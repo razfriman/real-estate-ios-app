@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Assign text field delegates to this class
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
@@ -24,25 +25,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginClicked(sender: AnyObject) {
-        // TODO - Login here
         
-        
-        let parameters = [
-            "email": emailTextField.text!,
-            "password": passwordTextField.text!
-        ]
-        
-        request(.POST, "https://nodetest999.herokuapp.com/api/login", parameters: parameters, encoding: .JSON)
+        // Login through the API manager
+        ApiManager.sharedInstance.login(emailTextField.text!, password: passwordTextField.text!)
             .validate()
             .responseString { _, _, result in
                 
                 switch(result) {
                 case .Success:
-                    print("Validation Successful")
-                    debugPrint(result)
+                    // Successful login
+                    
+                    // Save the JWT token to the keychain
+                    ApiManager.sharedInstance.saveToKeychain(result.value!)
+                    
+                    // Perform the segue to move to the main screen of the app
                     self.performSegueWithIdentifier("loginSegue", sender: self)
+                    
                 case .Failure(_, let error):
+
+                    // Invalid email/password
                     print(error)
+
+                    let alertController = UIAlertController(title: "Cannot login", message:
+                        "Invalid email/password", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
         }
     }
@@ -50,20 +57,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         if(textField == emailTextField) {
+            // Move from Email to Password text field
             emailTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
-            return true
         } else if (textField == passwordTextField) {
+            // "Go" button pressed on the password field
+            // perform the login
             passwordTextField.resignFirstResponder()
             loginClicked(self)
-            return true
-        } else {
-            return false
         }
+        return true
     }
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        // Hide the keyboard when touching away from the textfield
         self.view.endEditing(true)
     }
     

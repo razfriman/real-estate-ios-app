@@ -14,6 +14,7 @@
 		F80781021B9A0E4600D04150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80781001B9A0E4600D04150 /* Main.storyboard */; };
 		F80781041B9A0E4600D04150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80781031B9A0E4600D04150 /* Images.xcassets */; };
 		F80781071B9A0E4600D04150 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80781051B9A0E4600D04150 /* LaunchScreen.xib */; };
+		F807BAA71BA7996700D44BF6 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F807BAA61BA7996700D44BF6 /* Keychain.swift */; settings = {ASSET_TAGS = (); }; };
 		F888E6ED1BA7651D0041F1B2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */; };
 		F888E6EE1BA7651D0041F1B2 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E01BA7651D0041F1B2 /* Download.swift */; };
 		F888E6EF1BA7651D0041F1B2 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E11BA7651D0041F1B2 /* Error.swift */; };
@@ -28,15 +29,14 @@
 		F888E6F81BA7651D0041F1B2 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6EA1BA7651D0041F1B2 /* Stream.swift */; };
 		F888E6F91BA7651D0041F1B2 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6EB1BA7651D0041F1B2 /* Upload.swift */; };
 		F888E6FA1BA7651D0041F1B2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6EC1BA7651D0041F1B2 /* Validation.swift */; };
-		F89F67D01BA7640D0064A7B6 /* DummyApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F67CE1BA7640D0064A7B6 /* DummyApiManager.swift */; };
-		F89F67D11BA7640D0064A7B6 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F67CF1BA7640D0064A7B6 /* RestApiManager.swift */; };
+		F89F67D11BA7640D0064A7B6 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F67CF1BA7640D0064A7B6 /* ApiManager.swift */; };
 		F8C479A11BA60FA700571091 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */; };
 		F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A21BA60FB800571091 /* SignupViewController.swift */; };
 		F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A41BA6139000571091 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = testiosapp1/SwiftyJSON.swift; sourceTree = "<group>"; };
 		F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesViewController.swift; sourceTree = "<group>"; };
 		F80780F71B9A0E4600D04150 /* MyRealEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRealEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80780FB1B9A0E4600D04150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +45,8 @@
 		F80781011B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F80781031B9A0E4600D04150 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F80781061B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F807BAA61BA7996700D44BF6 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		F807BAA81BA7997100D44BF6 /* KeychainAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainAccess.h; sourceTree = "<group>"; };
 		F888E6DE1BA7651D0041F1B2 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alamofire.h; path = AlamoFire/Alamofire.h; sourceTree = "<group>"; };
 		F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = AlamoFire/Alamofire.swift; sourceTree = "<group>"; };
 		F888E6E01BA7651D0041F1B2 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = AlamoFire/Download.swift; sourceTree = "<group>"; };
@@ -60,8 +62,7 @@
 		F888E6EA1BA7651D0041F1B2 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = AlamoFire/Stream.swift; sourceTree = "<group>"; };
 		F888E6EB1BA7651D0041F1B2 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = AlamoFire/Upload.swift; sourceTree = "<group>"; };
 		F888E6EC1BA7651D0041F1B2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = AlamoFire/Validation.swift; sourceTree = "<group>"; };
-		F89F67CE1BA7640D0064A7B6 /* DummyApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyApiManager.swift; sourceTree = "<group>"; };
-		F89F67CF1BA7640D0064A7B6 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
+		F89F67CF1BA7640D0064A7B6 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		F8C479A21BA60FB800571091 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		F8C479A41BA6139000571091 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +89,7 @@
 		F80780EE1B9A0E4600D04150 = {
 			isa = PBXGroup;
 			children = (
-				F888E6DD1BA765110041F1B2 /* AlamoFire */,
+				F807BAAA1BA79FCD00D44BF6 /* Libraries */,
 				F80780F91B9A0E4600D04150 /* MyRealEstate */,
 				F80780F81B9A0E4600D04150 /* Products */,
 				35D3F57B3B00F4DD15499501 /* Frameworks */,
@@ -106,19 +107,13 @@
 		F80780F91B9A0E4600D04150 /* MyRealEstate */ = {
 			isa = PBXGroup;
 			children = (
-				F89F67CE1BA7640D0064A7B6 /* DummyApiManager.swift */,
-				F89F67CF1BA7640D0064A7B6 /* RestApiManager.swift */,
-				F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */,
+				F807BAAB1BA79FE400D44BF6 /* ViewControllers */,
 				F80780FC1B9A0E4600D04150 /* AppDelegate.swift */,
-				F80780FE1B9A0E4600D04150 /* LoginViewController.swift */,
-				F8C479A21BA60FB800571091 /* SignupViewController.swift */,
-				F8C479A41BA6139000571091 /* ProfileViewController.swift */,
+				F89F67CF1BA7640D0064A7B6 /* ApiManager.swift */,
 				F80781001B9A0E4600D04150 /* Main.storyboard */,
 				F80781031B9A0E4600D04150 /* Images.xcassets */,
 				F80781051B9A0E4600D04150 /* LaunchScreen.xib */,
 				F80780FA1B9A0E4600D04150 /* Supporting Files */,
-				F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */,
-				F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */,
 			);
 			name = MyRealEstate;
 			path = testiosapp1;
@@ -130,6 +125,45 @@
 				F80780FB1B9A0E4600D04150 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F807BAA51BA7995700D44BF6 /* KeychainAccess */ = {
+			isa = PBXGroup;
+			children = (
+				F807BAA61BA7996700D44BF6 /* Keychain.swift */,
+				F807BAA81BA7997100D44BF6 /* KeychainAccess.h */,
+			);
+			name = KeychainAccess;
+			sourceTree = "<group>";
+		};
+		F807BAA91BA79FC400D44BF6 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				F8024FDA1BA6FE0C00A46DE3 /* SwiftyJSON.swift */,
+			);
+			name = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		F807BAAA1BA79FCD00D44BF6 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F807BAA91BA79FC400D44BF6 /* SwiftyJSON */,
+				F807BAA51BA7995700D44BF6 /* KeychainAccess */,
+				F888E6DD1BA765110041F1B2 /* AlamoFire */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		F807BAAB1BA79FE400D44BF6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */,
+				F80780FE1B9A0E4600D04150 /* LoginViewController.swift */,
+				F8C479A41BA6139000571091 /* ProfileViewController.swift */,
+				F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */,
+				F8C479A21BA60FB800571091 /* SignupViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F888E6DD1BA765110041F1B2 /* AlamoFire */ = {
@@ -233,11 +267,11 @@
 				F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */,
 				F888E6F41BA7651D0041F1B2 /* Request.swift in Sources */,
 				F888E6F71BA7651D0041F1B2 /* ServerTrustPolicy.swift in Sources */,
-				F89F67D01BA7640D0064A7B6 /* DummyApiManager.swift in Sources */,
 				F888E6F21BA7651D0041F1B2 /* MultipartFormData.swift in Sources */,
 				F888E6EE1BA7651D0041F1B2 /* Download.swift in Sources */,
-				F89F67D11BA7640D0064A7B6 /* RestApiManager.swift in Sources */,
+				F89F67D11BA7640D0064A7B6 /* ApiManager.swift in Sources */,
 				F888E6EF1BA7651D0041F1B2 /* Error.swift in Sources */,
+				F807BAA71BA7996700D44BF6 /* Keychain.swift in Sources */,
 				F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */,
 				F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */,
 				F888E6F51BA7651D0041F1B2 /* ResponseSerialization.swift in Sources */,

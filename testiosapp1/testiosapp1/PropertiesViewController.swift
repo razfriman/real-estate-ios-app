@@ -29,9 +29,9 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
         self.view.addSubview(btn)
     }
     
-    func addDummyData() {
-        DummyApiManager.sharedInstance.getRandomUser { json in
-            let results = json["results"]
+   // func addDummyData() {
+    //    DummyApiManager.sharedInstance.getRandomUser { json in
+      //      let results = json["results"]
             
             //for (index: String, subJson: JSON) in results {
                 
@@ -43,8 +43,8 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
   //                  tableView?.reloadData()
     //            })
       //      }
-        }
-    }
+        //}
+//    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count;

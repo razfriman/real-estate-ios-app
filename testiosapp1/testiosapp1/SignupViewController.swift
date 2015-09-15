@@ -8,11 +8,16 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Assign text field delegates to this class
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -20,16 +25,112 @@ class SignupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func signupClicked(sender: AnyObject) {
+    func checkValidInputFields() -> Bool {
+    
+    
+        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         
-        // TODO - Perform signup
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        if(!emailTest.evaluateWithObject(emailTextField.text)) {
+            // Invalid email
+            showErrorMessage("Error", message: "Invalid email address")
+            return false
+        }
         
-        // TODO - DECIDE -- Go to login screen, or directly log in with the newly created account??
-        performSegueWithIdentifier("signupDoneSegue", sender: self)
+        if(passwordTextField.text == nil || passwordTextField.text?.characters.count == 0) {
+            // Password is required
+            showErrorMessage("Error", message: "Password cannot be empty")
+            return false
+        }
+        
+        return true
     }
     
+    func showErrorMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func signupClicked(sender: AnyObject) {
+        
+        if(!checkValidInputFields()) {
+            return
+        }
+        
+        // Login through the API manager
+        ApiManager.sharedInstance.register(emailTextField.text!, password: passwordTextField.text!)
+            .validate()
+            .responseString { _, _, result in
+                
+                switch(result) {
+                case .Success:
+                    // Successful register
+                    
+
+                    // Now we need to login to obtain the JWT token
+                    self.loginAfterRegister()
+                case .Failure(_, let error):
+                    
+                    // Cannot register
+                    print(error)
+                    self.showErrorMessage("Cannot register", message: "TODO - Get message for why registration failed")
+                }
+        }
+    }
+    
+    func loginAfterRegister() {
+        
+        // Login through the API manager
+        ApiManager.sharedInstance.login(emailTextField.text!, password: passwordTextField.text!)
+            .validate()
+            .responseString { _, _, result in
+                
+                switch(result) {
+                case .Success:
+                    // Successful login
+                    
+                    // Save the JWT token to the keychain
+                    ApiManager.sharedInstance.saveToKeychain(result.value!)
+                    
+                    // Perform the segue to move to the main screen of the app
+                    self.performSegueWithIdentifier("signupDoneSegue", sender: self)
+                    
+                case .Failure(_, let error):
+                    
+                    // Invalid email/password
+                    print(error)
+                    self.showErrorMessage("Cannot login", message: "Invalid email/password")
+                }
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if(textField == emailTextField) {
+            // Move from Email to Password text field
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else if (textField == passwordTextField) {
+            // "Go" button pressed on the password field
+            // perform the login
+            passwordTextField.resignFirstResponder()
+            signupClicked(self)
+        }
+        return true
+    }
+    
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        // Hide the keyboard when touching away from the textfield
         self.view.endEditing(true)
     }
+    
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+
 }
 
