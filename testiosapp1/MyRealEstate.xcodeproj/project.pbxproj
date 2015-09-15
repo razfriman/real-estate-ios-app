@@ -15,6 +15,7 @@
 		F80781041B9A0E4600D04150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80781031B9A0E4600D04150 /* Images.xcassets */; };
 		F80781071B9A0E4600D04150 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80781051B9A0E4600D04150 /* LaunchScreen.xib */; };
 		F807BAA71BA7996700D44BF6 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F807BAA61BA7996700D44BF6 /* Keychain.swift */; settings = {ASSET_TAGS = (); }; };
+		F807BAAD1BA7B20200D44BF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F807BAAC1BA7B20200D44BF6 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		F888E6ED1BA7651D0041F1B2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */; };
 		F888E6EE1BA7651D0041F1B2 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E01BA7651D0041F1B2 /* Download.swift */; };
 		F888E6EF1BA7651D0041F1B2 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E11BA7651D0041F1B2 /* Error.swift */; };
@@ -47,6 +48,7 @@
 		F80781061B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F807BAA61BA7996700D44BF6 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F807BAA81BA7997100D44BF6 /* KeychainAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainAccess.h; sourceTree = "<group>"; };
+		F807BAAC1BA7B20200D44BF6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F888E6DE1BA7651D0041F1B2 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alamofire.h; path = AlamoFire/Alamofire.h; sourceTree = "<group>"; };
 		F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = AlamoFire/Alamofire.swift; sourceTree = "<group>"; };
 		F888E6E01BA7651D0041F1B2 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = AlamoFire/Download.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				F807BAAB1BA79FE400D44BF6 /* ViewControllers */,
 				F80780FC1B9A0E4600D04150 /* AppDelegate.swift */,
 				F89F67CF1BA7640D0064A7B6 /* ApiManager.swift */,
+				F807BAAC1BA7B20200D44BF6 /* Extensions.swift */,
 				F80781001B9A0E4600D04150 /* Main.storyboard */,
 				F80781031B9A0E4600D04150 /* Images.xcassets */,
 				F80781051B9A0E4600D04150 /* LaunchScreen.xib */,
@@ -265,6 +268,7 @@
 				F888E6F61BA7651D0041F1B2 /* Result.swift in Sources */,
 				F888E6FA1BA7651D0041F1B2 /* Validation.swift in Sources */,
 				F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */,
+				F807BAAD1BA7B20200D44BF6 /* Extensions.swift in Sources */,
 				F888E6F41BA7651D0041F1B2 /* Request.swift in Sources */,
 				F888E6F71BA7651D0041F1B2 /* ServerTrustPolicy.swift in Sources */,
 				F888E6F21BA7651D0041F1B2 /* MultipartFormData.swift in Sources */,

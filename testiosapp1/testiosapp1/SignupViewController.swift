@@ -28,34 +28,27 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     func checkValidInputFields() -> Bool {
     
     
-        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        if(!emailTest.evaluateWithObject(emailTextField.text)) {
+        if(!validateEmail(emailTextField.text)) {
             // Invalid email
-            showErrorMessage("Error", message: "Invalid email address")
+            showAlertMessage("Error", message: "Invalid email address")
             return false
         }
         
         if(passwordTextField.text == nil || passwordTextField.text?.characters.count == 0) {
             // Password is required
-            showErrorMessage("Error", message: "Password cannot be empty")
+            showAlertMessage("Error", message: "Password cannot be empty")
             return false
         }
         
         return true
     }
     
-    func showErrorMessage(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message:
-            message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
+   
     
     @IBAction func signupClicked(sender: AnyObject) {
         
         if(!checkValidInputFields()) {
+            // Ensure the input is valid
             return
         }
         
@@ -66,16 +59,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 
                 switch(result) {
                 case .Success:
-                    // Successful register
                     
-
+                    // Successfully registered
                     // Now we need to login to obtain the JWT token
                     self.loginAfterRegister()
+                    
                 case .Failure(_, let error):
                     
-                    // Cannot register
+                    // Error while registering
                     print(error)
-                    self.showErrorMessage("Cannot register", message: "TODO - Get message for why registration failed")
+                    self.showAlertMessage("Cannot register", message: "TODO - Get message for why registration failed")
                 }
         }
     }
@@ -90,7 +83,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 switch(result) {
                 case .Success:
                     // Successful login
-                    
                     // Save the JWT token to the keychain
                     ApiManager.sharedInstance.saveToKeychain(result.value!)
                     
@@ -101,7 +93,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     
                     // Invalid email/password
                     print(error)
-                    self.showErrorMessage("Cannot login", message: "Invalid email/password")
+                    self.showAlertMessage("Cannot login", message: "Invalid email/password")
                 }
         }
     }

@@ -24,7 +24,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func checkValidInputFields() -> Bool {
+        
+        
+        if(!validateEmail(emailTextField.text)) {
+            // Invalid email
+            showAlertMessage("Error", message: "Invalid email address")
+            return false
+        }
+        
+        if(passwordTextField.text == nil || passwordTextField.text?.characters.count == 0) {
+            // Password is required
+            showAlertMessage("Error", message: "Password is required")
+            return false
+        }
+        
+        return true
+    }
+    
     @IBAction func loginClicked(sender: AnyObject) {
+        
+        if(!checkValidInputFields()) {
+            return
+        }
         
         // Login through the API manager
         ApiManager.sharedInstance.login(emailTextField.text!, password: passwordTextField.text!)
@@ -43,13 +65,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                 case .Failure(_, let error):
 
-                    // Invalid email/password
                     print(error)
-
-                    let alertController = UIAlertController(title: "Cannot login", message:
-                        "Invalid email/password", preferredStyle: UIAlertControllerStyle.Alert)
-                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    // Invalid email/password
+                    self.showAlertMessage("Error", message: "Invalid email/password")
                 }
         }
     }
