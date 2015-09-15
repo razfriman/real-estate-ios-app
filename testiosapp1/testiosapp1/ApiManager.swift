@@ -9,30 +9,30 @@
 import Foundation
 
 class ApiManager: NSObject {
-
+    
     // Singleton instance of the ApiManager
     static let sharedInstance = ApiManager()
     
     // Constants
     let BASE_URL = "https://nodetest999.herokuapp.com/api"
     let KEYCHAIN_NAME = "com.myrealestate"
-
+    
     // Static constants
     static let JWT_TOKEN_KEY_NAME = "jwtToken"
     static let USER_ID_KEY_NAME = "userId"
     static let EMAIL_KEY_NAME = "email"
-
     
-  
+    
+    
     
     func login(email: String, password: String) -> Request {
         let parameters : [String:AnyObject] = [
             "email": email,
             "password": password
-            ]
+        ]
         
-            let apiRequest = request(.POST, "\(BASE_URL)/login", parameters: parameters, encoding: .JSON)
-
+        let apiRequest = request(.POST, "\(BASE_URL)/login", parameters: parameters, encoding: .JSON)
+        
         return apiRequest
     }
     
@@ -50,7 +50,7 @@ class ApiManager: NSObject {
     func checkToken() -> Request {
         let headers = loadAuthHeaders()
         let apiRequest = request(.GET, "\(BASE_URL)/", parameters: nil, encoding: .JSON, headers: headers)
-
+        
         return apiRequest
     }
     
@@ -66,7 +66,7 @@ class ApiManager: NSObject {
         let headers = loadAuthHeaders()
         
         let apiRequest = request(.GET, "\(BASE_URL)/users/\(userId)", parameters: nil, encoding: .JSON, headers: headers)
-                return apiRequest
+        return apiRequest
     }
     
     func loadUserProperties(userId: String) -> Request {

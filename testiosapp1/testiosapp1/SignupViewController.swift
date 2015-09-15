@@ -15,14 +15,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func checkValidInputFields() -> Bool {
-    
-    
+        
         if(!validateEmail(emailTextField.text)) {
             // Invalid email
             showAlertMessage("Error", message: "Invalid email address")
@@ -38,7 +32,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-   
+    
     
     @IBAction func signupClicked(sender: AnyObject) {
         
@@ -114,7 +108,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.resignFirstResponder()
             signupClicked(self)
             break
-
+            
         default:
             break
         }
@@ -132,6 +126,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
-
+    
 }
 

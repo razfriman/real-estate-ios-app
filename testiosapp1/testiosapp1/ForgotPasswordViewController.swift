@@ -40,9 +40,8 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-
+    
     @IBAction func resetPasswordClicked(sender: AnyObject) {
-        
         
         if(!checkValidInputFields()) {
             return
@@ -50,15 +49,15 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         
         showAlertMessage("Success", message: "An email to reset your password has been sent to \(emailTextField.text!)", actionTitle: "Okay", handler: { (action) -> Void in
             self.performSegueWithIdentifier("forgotPasswordDoneSegue", sender: self)
-            })
+        })
         
-
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-        @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
 }
 

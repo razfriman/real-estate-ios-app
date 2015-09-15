@@ -77,7 +77,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.setRootViewController("MainTabBarController")
                     
                 case .Failure(_, let error):
-
+                    
                     print(error)
                     // Invalid email/password
                     self.showAlertMessage("Error", message: "Invalid email/password")
