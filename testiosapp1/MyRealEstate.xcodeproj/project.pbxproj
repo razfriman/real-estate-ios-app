@@ -227,6 +227,7 @@
 				TargetAttributes = {
 					F80780F61B9A0E4600D04150 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = LV2EQ49JTC;
 					};
 				};
 			};
@@ -402,10 +403,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testiosapp1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "razfriman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyRealEstate;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -413,10 +417,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testiosapp1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "razfriman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyRealEstate;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
