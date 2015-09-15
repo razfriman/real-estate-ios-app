@@ -78,13 +78,20 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         // Login through the API manager
         ApiManager.sharedInstance.login(emailTextField.text!, password: passwordTextField.text!)
             .validate()
-            .responseString { _, _, result in
+            .responseJSON { _, _, result in
                 
                 switch(result) {
                 case .Success:
                     // Successful login
                     // Save the JWT token to the keychain
-                    ApiManager.sharedInstance.saveToKeychain(result.value!)
+                    let json = result.value as? NSDictionary // info will be nil if it's not an NSDictionary
+                    let token = json?["token"] as? String
+                    let userId = json?["id"] as? String
+                    let email = json?["email"] as? String
+                    
+                    ApiManager.sharedInstance.saveToKeychain(ApiManager.JWT_TOKEN_KEY_NAME, value: token!)
+                    ApiManager.sharedInstance.saveToKeychain(ApiManager.USER_ID_KEY_NAME, value: userId!)
+                    ApiManager.sharedInstance.saveToKeychain(ApiManager.EMAIL_KEY_NAME, value: email!)
                     
                     // Perform the segue to move to the main screen of the app
                     self.performSegueWithIdentifier("signupDoneSegue", sender: self)

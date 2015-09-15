@@ -143,7 +143,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xM4-Y0-hq1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xM4-Y0-hq1">
                                 <rect key="frame" x="16" y="494" width="568" height="49"/>
                                 <color key="backgroundColor" red="0.872995205026455" green="0.031612297116515281" blue="0.16861821200060376" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -160,16 +160,44 @@
                                     <action selector="resetPasswordClicked:" destination="siT-6b-DKv" eventType="touchUpInside" id="aAK-kH-ABb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRB-P3-ptv">
+                                <rect key="frame" x="16" y="20" width="564" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Wd4-Wn-Eiv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y77-Ti-BC5">
+                                <rect key="frame" x="20" y="103" width="560" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="4Ld-tX-3jd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xM4-Y0-hq1" firstAttribute="trailing" secondItem="cGV-Nc-0NK" secondAttribute="trailingMargin" id="BWa-F8-iwC"/>
+                            <constraint firstItem="Y77-Ti-BC5" firstAttribute="trailing" secondItem="PRB-P3-ptv" secondAttribute="trailing" id="GgW-sZ-LjD"/>
+                            <constraint firstItem="Y77-Ti-BC5" firstAttribute="top" secondItem="PRB-P3-ptv" secondAttribute="bottom" constant="8" symbolic="YES" id="QQN-NT-KNF"/>
+                            <constraint firstItem="Y77-Ti-BC5" firstAttribute="trailing" secondItem="cGV-Nc-0NK" secondAttribute="trailingMargin" id="XbB-vq-B5A"/>
+                            <constraint firstItem="Y77-Ti-BC5" firstAttribute="centerX" secondItem="xM4-Y0-hq1" secondAttribute="centerX" id="ZQV-Zt-vp2"/>
+                            <constraint firstItem="PRB-P3-ptv" firstAttribute="leading" secondItem="cGV-Nc-0NK" secondAttribute="leadingMargin" constant="-4" id="iBn-y0-sbF"/>
+                            <constraint firstItem="PRB-P3-ptv" firstAttribute="leading" secondItem="xM4-Y0-hq1" secondAttribute="leading" id="opv-38-UlI"/>
                             <constraint firstItem="xM4-Y0-hq1" firstAttribute="leading" secondItem="cGV-Nc-0NK" secondAttribute="leadingMargin" id="qUt-q2-JMj"/>
+                            <constraint firstItem="PRB-P3-ptv" firstAttribute="top" secondItem="eFA-Ko-jqA" secondAttribute="bottom" id="rED-ZG-vC0"/>
                             <constraint firstItem="lww-rg-NW9" firstAttribute="top" secondItem="xM4-Y0-hq1" secondAttribute="bottom" constant="8" id="uWp-kz-Bbj"/>
+                            <constraint firstItem="Y77-Ti-BC5" firstAttribute="leading" secondItem="cGV-Nc-0NK" secondAttribute="leadingMargin" id="yVp-J0-Tyq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="man-7" id="SsH-ac-5Xp"/>
                     <connections>
+                        <outlet property="emailLabel" destination="Y77-Ti-BC5" id="H4N-Oa-pzZ"/>
+                        <outlet property="nameLabel" destination="PRB-P3-ptv" id="Ttu-2k-pNf"/>
                         <segue destination="mbq-28-24F" kind="unwind" identifier="logoutSegue" unwindAction="unwindToLoginScreen:" id="tyS-XZ-Op3"/>
                     </connections>
                 </viewController>
@@ -192,6 +220,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOg-Ix-KmZ">
                                 <rect key="frame" x="188" y="550" width="224" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Already have an account? Log in">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -282,11 +311,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRS-n4-u5s">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRS-n4-u5s">
                                 <rect key="frame" x="229" y="550" width="143" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="143" id="dAa-Fl-JbU"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
