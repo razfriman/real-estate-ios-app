@@ -13,11 +13,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // Assign text field delegates to this class
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,7 +89,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     ApiManager.sharedInstance.saveToKeychain(ApiManager.EMAIL_KEY_NAME, value: email!)
                     
                     // Perform the segue to move to the main screen of the app
-                    self.performSegueWithIdentifier("signupDoneSegue", sender: self)
+                    self.setRootViewController("MainTabBarController")
                     
                 case .Failure(_, let error):
                     
@@ -106,17 +101,24 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        if(textField == emailTextField) {
+        switch(textField) {
+        case emailTextField:
             // Move from Email to Password text field
             emailTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
-        } else if (textField == passwordTextField) {
+            break
+            
+        case passwordTextField:
             // "Go" button pressed on the password field
             // perform the login
             passwordTextField.resignFirstResponder()
             signupClicked(self)
+            break
+
+        default:
+            break
         }
+        
         return true
     }
     

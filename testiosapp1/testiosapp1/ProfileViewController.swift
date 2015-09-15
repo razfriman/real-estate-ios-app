@@ -31,7 +31,6 @@ class ProfileViewController: UIViewController {
                     
                     print(result)
                     debugPrint(result)
-                    self.showAlertMessage("SUCCESS", message: "Loaded User")
                     
                 case .Failure(_, let error):
                     print(error)
@@ -54,7 +53,7 @@ class ProfileViewController: UIViewController {
         ApiManager.sharedInstance.clearFromKeychain(ApiManager.EMAIL_KEY_NAME)
 
         // Return to the login screen
-        performSegueWithIdentifier("logoutSegue", sender: self)
+        self.setRootViewController("LoginViewController")
     }
     
     @IBOutlet weak var nameLabel: UILabel!

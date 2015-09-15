@@ -13,9 +13,6 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // Assign text field delegates to this class
-        emailTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {

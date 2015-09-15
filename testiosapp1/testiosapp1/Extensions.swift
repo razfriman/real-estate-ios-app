@@ -29,4 +29,15 @@ extension UIViewController {
         
         return emailTest.evaluateWithObject(email)
     }
+    
+    func setRootViewController(identifier: String) {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier(identifier)
+        
+        appDelegate.window?.rootViewController = initialViewController
+        
+    }
+
 }

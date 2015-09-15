@@ -14,47 +14,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Assign text field delegates to this class
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
         
         // Load email from the keychain
         if let email = ApiManager.sharedInstance.loadFromKeychain(ApiManager.EMAIL_KEY_NAME) {
             emailTextField.text = email
         }
-        
-        // Check if the current login token is still valid
-        checkSavedLoginToken()
-
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func checkSavedLoginToken() {
-        ApiManager.sharedInstance.checkToken()
-            .validate()
-            .responseJSON { _, _, result in
-                
-                switch(result) {
-                case .Success:
-                    // Token is valid
-                    
-                    // Perform the segue to move to the main screen of the app
-                    self.performSegueWithIdentifier("loginSegue", sender: self)
-                    
-                case .Failure(_, let error):
-                    
-                    print(error)
-
-                    // Current token is invalid
-                    ApiManager.sharedInstance.clearFromKeychain(ApiManager.JWT_TOKEN_KEY_NAME)
-                    ApiManager.sharedInstance.clearFromKeychain(ApiManager.USER_ID_KEY_NAME)
-                    ApiManager.sharedInstance.clearFromKeychain(ApiManager.EMAIL_KEY_NAME)
-                }
-        }
     }
     
     func checkValidInputFields() -> Bool {
@@ -105,7 +74,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.passwordTextField.text = ""
                     
                     // Perform the segue to move to the main screen of the app
-                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                    self.setRootViewController("MainTabBarController")
                     
                 case .Failure(_, let error):
 
@@ -137,13 +106,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    @IBAction func unwindToLoginScreen(segue: UIStoryboardSegue) {
+        
+    }
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBAction func unwindToLoginScreen(segue: UIStoryboardSegue) {
-        
-    }
 }
 
