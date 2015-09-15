@@ -17,11 +17,44 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Assign text field delegates to this class
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        // Load email from the keychain
+        if let email = ApiManager.sharedInstance.loadFromKeychain(ApiManager.EMAIL_KEY_NAME) {
+            emailTextField.text = email
+        }
+        
+        // Check if the current login token is still valid
+        checkSavedLoginToken()
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func checkSavedLoginToken() {
+        ApiManager.sharedInstance.checkToken()
+            .validate()
+            .responseJSON { _, _, result in
+                
+                switch(result) {
+                case .Success:
+                    // Token is valid
+                    
+                    // Perform the segue to move to the main screen of the app
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                    
+                case .Failure(_, let error):
+                    
+                    print(error)
+
+                    // Current token is invalid
+                    ApiManager.sharedInstance.clearFromKeychain(ApiManager.JWT_TOKEN_KEY_NAME)
+                    ApiManager.sharedInstance.clearFromKeychain(ApiManager.USER_ID_KEY_NAME)
+                    ApiManager.sharedInstance.clearFromKeychain(ApiManager.EMAIL_KEY_NAME)
+                }
+        }
     }
     
     func checkValidInputFields() -> Bool {
@@ -66,6 +99,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     ApiManager.sharedInstance.saveToKeychain(ApiManager.JWT_TOKEN_KEY_NAME, value: token!)
                     ApiManager.sharedInstance.saveToKeychain(ApiManager.USER_ID_KEY_NAME, value: userId!)
                     ApiManager.sharedInstance.saveToKeychain(ApiManager.EMAIL_KEY_NAME, value: email!)
+                    
+                    
+                    // Clear the password text
+                    self.passwordTextField.text = ""
                     
                     // Perform the segue to move to the main screen of the app
                     self.performSegueWithIdentifier("loginSegue", sender: self)

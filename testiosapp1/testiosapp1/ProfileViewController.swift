@@ -13,7 +13,9 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        ApiManager.sharedInstance.loadUser(ApiManager.sharedInstance.loadFromKeychain(ApiManager.USER_ID_KEY_NAME)!)
+        if let userId = ApiManager.sharedInstance.loadFromKeychain(ApiManager.USER_ID_KEY_NAME) {
+            
+        ApiManager.sharedInstance.loadUser(userId)
             .validate()
             .responseJSON { _, _, result in
                 
@@ -21,6 +23,11 @@ class ProfileViewController: UIViewController {
                 case .Success:
                     
                     let json = result.value as? NSDictionary // info will be nil if it's not an NSDictionary
+                    let email = json?["email"] as? String
+                    let id = json?["_id"] as? String
+                    
+                    self.emailLabel.text = email
+                    self.nameLabel.text = id
                     
                     print(result)
                     debugPrint(result)
@@ -30,6 +37,7 @@ class ProfileViewController: UIViewController {
                     print(error)
                     self.showAlertMessage("ERROR", message: "Cannot Load User")
                 }
+        }
         }
     }
     

@@ -15,7 +15,7 @@ class ApiManager: NSObject {
     
     // Constants
     let BASE_URL = "https://nodetest999.herokuapp.com/api"
-    let JWT_TOKEN_KEYCHAIN = "com.myrealestate"
+    let KEYCHAIN_NAME = "com.myrealestate"
 
     // Static constants
     static let JWT_TOKEN_KEY_NAME = "jwtToken"
@@ -47,35 +47,49 @@ class ApiManager: NSObject {
         return apiRequest
     }
     
+    func checkToken() -> Request {
+        let headers = loadAuthHeaders()
+        let apiRequest = request(.GET, "\(BASE_URL)/", parameters: nil, encoding: .JSON, headers: headers)
+
+        return apiRequest
+    }
+    
+    func loadAuthHeaders() -> [String : String] {
+        
+        let token = loadFromKeychain(ApiManager.JWT_TOKEN_KEY_NAME) ?? ""
+        let headers = ["x-access-token": token]
+        return headers
+    }
+    
     func loadUser(userId: String) -> Request {
         
-        
-        let headers = ["x-access-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NWYwNWU3MTQ1MDJmNzkzOWIwMDAwMDIiLCJwYXNzd29yZCI6IiQyYSQxMCRjTENlL29iN05aSDY0SmZmLzh5RXUuQndxTEFDMFdEQmo4am04a1hIVjdpbmcxRERkTlFMSyIsImVtYWlsIjoidXNlckB1c2VyLmNvbSJ9.Lyb8hlUhs2hliXD1xCkTWk5uCDR3BJOs_Liz6BsbvzM"]
+        let headers = loadAuthHeaders()
         
         let apiRequest = request(.GET, "\(BASE_URL)/users/\(userId)", parameters: nil, encoding: .JSON, headers: headers)
                 return apiRequest
     }
     
     func loadUserProperties(userId: String) -> Request {
-        let apiRequest = request(.GET, "\(BASE_URL)/users/\(userId)/properties", parameters: nil, encoding: .JSON)
+        let headers = loadAuthHeaders()
+        let apiRequest = request(.GET, "\(BASE_URL)/users/\(userId)/properties", parameters: nil, encoding: .JSON, headers: headers)
         
         return apiRequest
     }
     
     
     func saveToKeychain(key: String, value: String) {
-        let keychain = Keychain(service: JWT_TOKEN_KEYCHAIN)
+        let keychain = Keychain(service: KEYCHAIN_NAME)
         keychain[key] = value
     }
     
     func loadFromKeychain(key: String) -> String? {
-        let keychain = Keychain(service: JWT_TOKEN_KEYCHAIN)
+        let keychain = Keychain(service: KEYCHAIN_NAME)
         let value = keychain[key]
         return value
     }
     
     func clearFromKeychain(key: String) {
-        let keychain = Keychain(service: JWT_TOKEN_KEYCHAIN)
+        let keychain = Keychain(service: KEYCHAIN_NAME)
         keychain[key] = nil
     }
 }
