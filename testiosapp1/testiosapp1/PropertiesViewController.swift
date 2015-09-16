@@ -85,9 +85,24 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         print("Selected: \(indexPath.row)")
+        
+        performSegueWithIdentifier("showPropertyDetailSegue", sender: self)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showPropertyDetailSegue") {
+           
+            // Pass property data to the details page
+            let selectedIndex = tableView.indexPathForSelectedRow!.row
+            let property = data[selectedIndex]
+            let detailVC = segue.destinationViewController as? PropertyDetailViewController
+            detailVC?.property = property
+        }
     }
     
     @IBOutlet weak var tableView: UITableView!

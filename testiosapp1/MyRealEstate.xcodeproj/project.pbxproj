@@ -40,6 +40,7 @@
 		F8C479A11BA60FA700571091 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */; };
 		F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A21BA60FB800571091 /* SignupViewController.swift */; };
 		F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A41BA6139000571091 /* ProfileViewController.swift */; };
+		F8CBD50A1BA9DFD800EAF4A3 /* PropertyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBD5091BA9DFD800EAF4A3 /* PropertyDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		F8C479A21BA60FB800571091 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		F8C479A41BA6139000571091 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F8CBD5091BA9DFD800EAF4A3 /* PropertyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				F8024FDE1BA6FECB00A46DE3 /* PropertiesViewController.swift */,
 				F8C479A21BA60FB800571091 /* SignupViewController.swift */,
 				F894ABBC1BA84B4C00F318A9 /* MainTabBarController.swift */,
+				F8CBD5091BA9DFD800EAF4A3 /* PropertyDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				F85573241BA9A3A7008D9CB4 /* Property.swift in Sources */,
 				F85573221BA9A35E008D9CB4 /* AlamofireExtensions.swift in Sources */,
 				F888E6F91BA7651D0041F1B2 /* Upload.swift in Sources */,
+				F8CBD50A1BA9DFD800EAF4A3 /* PropertyDetailViewController.swift in Sources */,
 				F888E6F61BA7651D0041F1B2 /* Result.swift in Sources */,
 				F894ABBD1BA84B4C00F318A9 /* MainTabBarController.swift in Sources */,
 				F888E6FA1BA7651D0041F1B2 /* Validation.swift in Sources */,
@@ -442,6 +446,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testiosapp1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "razfriman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyRealEstate;
@@ -456,6 +461,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testiosapp1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "razfriman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyRealEstate;
