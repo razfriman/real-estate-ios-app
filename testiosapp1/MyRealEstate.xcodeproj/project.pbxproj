@@ -15,7 +15,12 @@
 		F80781041B9A0E4600D04150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80781031B9A0E4600D04150 /* Images.xcassets */; };
 		F80781071B9A0E4600D04150 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80781051B9A0E4600D04150 /* LaunchScreen.xib */; };
 		F807BAA71BA7996700D44BF6 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F807BAA61BA7996700D44BF6 /* Keychain.swift */; settings = {ASSET_TAGS = (); }; };
-		F807BAAD1BA7B20200D44BF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F807BAAC1BA7B20200D44BF6 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+		F84A38B71BA997C0007C3A58 /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84A38B61BA997C0007C3A58 /* PropertyCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F855731D1BA9A1A3008D9CB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F855731C1BA9A1A3008D9CB4 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		F85573201BA9A354008D9CB4 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F855731F1BA9A354008D9CB4 /* ViewControllerExtensions.swift */; settings = {ASSET_TAGS = (); }; };
+		F85573221BA9A35E008D9CB4 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85573211BA9A35E008D9CB4 /* AlamofireExtensions.swift */; settings = {ASSET_TAGS = (); }; };
+		F85573241BA9A3A7008D9CB4 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85573231BA9A3A7008D9CB4 /* Property.swift */; settings = {ASSET_TAGS = (); }; };
+		F85573261BA9A5BA008D9CB4 /* Tenant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85573251BA9A5BA008D9CB4 /* Tenant.swift */; settings = {ASSET_TAGS = (); }; };
 		F888E6ED1BA7651D0041F1B2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */; };
 		F888E6EE1BA7651D0041F1B2 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E01BA7651D0041F1B2 /* Download.swift */; };
 		F888E6EF1BA7651D0041F1B2 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6E11BA7651D0041F1B2 /* Error.swift */; };
@@ -49,7 +54,12 @@
 		F80781061B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F807BAA61BA7996700D44BF6 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F807BAA81BA7997100D44BF6 /* KeychainAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainAccess.h; sourceTree = "<group>"; };
-		F807BAAC1BA7B20200D44BF6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F84A38B61BA997C0007C3A58 /* PropertyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
+		F855731C1BA9A1A3008D9CB4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F855731F1BA9A354008D9CB4 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		F85573211BA9A35E008D9CB4 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtensions.swift; sourceTree = "<group>"; };
+		F85573231BA9A3A7008D9CB4 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		F85573251BA9A5BA008D9CB4 /* Tenant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tenant.swift; sourceTree = "<group>"; };
 		F888E6DE1BA7651D0041F1B2 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alamofire.h; path = AlamoFire/Alamofire.h; sourceTree = "<group>"; };
 		F888E6DF1BA7651D0041F1B2 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = AlamoFire/Alamofire.swift; sourceTree = "<group>"; };
 		F888E6E01BA7651D0041F1B2 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = AlamoFire/Download.swift; sourceTree = "<group>"; };
@@ -111,10 +121,12 @@
 		F80780F91B9A0E4600D04150 /* MyRealEstate */ = {
 			isa = PBXGroup;
 			children = (
+				F855731E1BA9A349008D9CB4 /* Extensions */,
+				F855731B1BA9A18E008D9CB4 /* Models */,
 				F807BAAB1BA79FE400D44BF6 /* ViewControllers */,
 				F80780FC1B9A0E4600D04150 /* AppDelegate.swift */,
 				F89F67CF1BA7640D0064A7B6 /* ApiManager.swift */,
-				F807BAAC1BA7B20200D44BF6 /* Extensions.swift */,
+				F84A38B61BA997C0007C3A58 /* PropertyCell.swift */,
 				F80781001B9A0E4600D04150 /* Main.storyboard */,
 				F80781031B9A0E4600D04150 /* Images.xcassets */,
 				F80781051B9A0E4600D04150 /* LaunchScreen.xib */,
@@ -170,6 +182,25 @@
 				F894ABBC1BA84B4C00F318A9 /* MainTabBarController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F855731B1BA9A18E008D9CB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F855731C1BA9A1A3008D9CB4 /* User.swift */,
+				F85573231BA9A3A7008D9CB4 /* Property.swift */,
+				F85573251BA9A5BA008D9CB4 /* Tenant.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F855731E1BA9A349008D9CB4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F855731F1BA9A354008D9CB4 /* ViewControllerExtensions.swift */,
+				F85573211BA9A35E008D9CB4 /* AlamofireExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		F888E6DD1BA765110041F1B2 /* AlamoFire */ = {
@@ -268,23 +299,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85573261BA9A5BA008D9CB4 /* Tenant.swift in Sources */,
+				F85573241BA9A3A7008D9CB4 /* Property.swift in Sources */,
+				F85573221BA9A35E008D9CB4 /* AlamofireExtensions.swift in Sources */,
 				F888E6F91BA7651D0041F1B2 /* Upload.swift in Sources */,
 				F888E6F61BA7651D0041F1B2 /* Result.swift in Sources */,
 				F894ABBD1BA84B4C00F318A9 /* MainTabBarController.swift in Sources */,
 				F888E6FA1BA7651D0041F1B2 /* Validation.swift in Sources */,
 				F80780FF1B9A0E4600D04150 /* LoginViewController.swift in Sources */,
-				F807BAAD1BA7B20200D44BF6 /* Extensions.swift in Sources */,
 				F888E6F41BA7651D0041F1B2 /* Request.swift in Sources */,
 				F888E6F71BA7651D0041F1B2 /* ServerTrustPolicy.swift in Sources */,
 				F888E6F21BA7651D0041F1B2 /* MultipartFormData.swift in Sources */,
 				F888E6EE1BA7651D0041F1B2 /* Download.swift in Sources */,
+				F84A38B71BA997C0007C3A58 /* PropertyCell.swift in Sources */,
 				F89F67D11BA7640D0064A7B6 /* ApiManager.swift in Sources */,
 				F888E6EF1BA7651D0041F1B2 /* Error.swift in Sources */,
 				F807BAA71BA7996700D44BF6 /* Keychain.swift in Sources */,
 				F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */,
 				F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */,
+				F85573201BA9A354008D9CB4 /* ViewControllerExtensions.swift in Sources */,
 				F888E6F51BA7651D0041F1B2 /* ResponseSerialization.swift in Sources */,
 				F888E6F11BA7651D0041F1B2 /* Manager.swift in Sources */,
+				F855731D1BA9A1A3008D9CB4 /* User.swift in Sources */,
 				F8024FDB1BA6FE0C00A46DE3 /* SwiftyJSON.swift in Sources */,
 				F888E6ED1BA7651D0041F1B2 /* Alamofire.swift in Sources */,
 				F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */,

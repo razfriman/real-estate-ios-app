@@ -1,12 +1,11 @@
 //
-//  Extensions.swift
-//  testiosapp1
+//  ViewControllerExtensions.swift
+//  MyRealEstate
 //
-//  Created by Raz Friman on 9/14/15.
-//  Copyright (c) 2015 Raz Friman. All rights reserved.
+//  Created by Raz Friman on 9/16/15.
+//  Copyright © 2015 Raz Friman. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIViewController {

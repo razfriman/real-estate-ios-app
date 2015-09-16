@@ -17,25 +17,20 @@ class ProfileViewController: UIViewController {
             
             ApiManager.sharedInstance.loadUser(userId)
                 .validate()
-                .responseJSON { _, _, result in
+                .responseObject { (_, _, result: Result<User>) in
                     
                     switch(result) {
                     case .Success:
-                        
-                        let json = result.value as? NSDictionary // info will be nil if it's not an NSDictionary
-                        let email = json?["email"] as? String
-                        let id = json?["_id"] as? String
-                        
-                        self.emailLabel.text = email
-                        self.nameLabel.text = id
-                        
                         print(result)
-                        debugPrint(result)
-                        
+                        if let user = result.value {
+                             self.emailLabel.text = user.email
+                            self.nameLabel.text = "\(user.firstName) \(user.lastName)"
+                            
+                        }
                     case .Failure(_, let error):
                         print(error)
                         self.showAlertMessage("ERROR", message: "Cannot Load User")
-                    }
+                }
             }
         }
     }
