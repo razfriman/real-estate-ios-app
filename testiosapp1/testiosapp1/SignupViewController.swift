@@ -19,13 +19,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         if(!validateEmail(emailTextField.text)) {
             // Invalid email
-            showAlertMessage("Error", message: "Invalid email address")
+            SCLAlertView().showError("Invalid email address", subTitle: "")
             return false
         }
         
         if(passwordTextField.text == nil || passwordTextField.text?.characters.count == 0) {
             // Password is required
-            showAlertMessage("Error", message: "Password cannot be empty")
+            SCLAlertView().showError("Password cannot be empty", subTitle: "")
             return false
         }
         
@@ -57,7 +57,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     
                     // Error while registering
                     print(error)
-                    self.showAlertMessage("Cannot register", message: "TODO - Get message for why registration failed")
+                    SCLAlertView().showError("Cannot register", subTitle: "TODO - Get message for why registration failed")
                 }
         }
     }
@@ -89,7 +89,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     
                     // Invalid email/password
                     print(error)
-                    self.showAlertMessage("Cannot login", message: "Invalid email/password")
+                    SCLAlertView().showError("Cannot login", subTitle: "Invalid email/password")
                 }
         }
     }

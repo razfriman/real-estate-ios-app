@@ -38,6 +38,7 @@
 		F888E6FA1BA7651D0041F1B2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888E6EC1BA7651D0041F1B2 /* Validation.swift */; };
 		F894ABBD1BA84B4C00F318A9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F894ABBC1BA84B4C00F318A9 /* MainTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		F89F67D11BA7640D0064A7B6 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F67CF1BA7640D0064A7B6 /* ApiManager.swift */; };
+		F8A25F751BAAEC9100A753AC /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A25F741BAAEC9100A753AC /* SCLAlertView.swift */; settings = {ASSET_TAGS = (); }; };
 		F8C479A11BA60FA700571091 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */; };
 		F8C479A31BA60FB800571091 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A21BA60FB800571091 /* SignupViewController.swift */; };
 		F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C479A41BA6139000571091 /* ProfileViewController.swift */; };
@@ -80,6 +81,7 @@
 		F888E6EC1BA7651D0041F1B2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = AlamoFire/Validation.swift; sourceTree = "<group>"; };
 		F894ABBC1BA84B4C00F318A9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F89F67CF1BA7640D0064A7B6 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		F8A25F741BAAEC9100A753AC /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		F8C479A01BA60FA700571091 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		F8C479A21BA60FB800571091 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		F8C479A41BA6139000571091 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		F807BAAA1BA79FCD00D44BF6 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F8A25F731BAAEC8400A753AC /* SCLAlertView */,
 				F807BAA91BA79FC400D44BF6 /* SwiftyJSON */,
 				F807BAA51BA7995700D44BF6 /* KeychainAccess */,
 				F888E6DD1BA765110041F1B2 /* AlamoFire */,
@@ -229,6 +232,14 @@
 				F888E6EC1BA7651D0041F1B2 /* Validation.swift */,
 			);
 			name = AlamoFire;
+			sourceTree = "<group>";
+		};
+		F8A25F731BAAEC8400A753AC /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				F8A25F741BAAEC9100A753AC /* SCLAlertView.swift */,
+			);
+			name = SCLAlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 				F85573241BA9A3A7008D9CB4 /* Property.swift in Sources */,
 				F85573221BA9A35E008D9CB4 /* AlamofireExtensions.swift in Sources */,
 				F888E6F91BA7651D0041F1B2 /* Upload.swift in Sources */,
+				F8A25F751BAAEC9100A753AC /* SCLAlertView.swift in Sources */,
 				F8CBD50A1BA9DFD800EAF4A3 /* PropertyDetailViewController.swift in Sources */,
 				F888E6F61BA7651D0041F1B2 /* Result.swift in Sources */,
 				F894ABBD1BA84B4C00F318A9 /* MainTabBarController.swift in Sources */,

@@ -23,7 +23,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     func checkValidInputFields() -> Bool {
         
         if(!validateEmail(emailTextField.text)) {
-            showAlertMessage("Error", message: "Invalid email address")
+            SCLAlertView().showError("Invalid email address", subTitle: "")
             return false
         }
         
@@ -47,10 +47,16 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        showAlertMessage("Success", message: "An email to reset your password has been sent to \(emailTextField.text!)", actionTitle: "Okay", handler: { (action) -> Void in
-            self.performSegueWithIdentifier("forgotPasswordDoneSegue", sender: self)
-        })
+
         
+        // TODO - ADD DISMISS HANDLER
+        let alert = SCLAlertView().showSuccess("Password reset", subTitle: "An email to reset your password has been sent to \(emailTextField.text!)")
+        alert.setDismissBlock({() -> Void in
+        self.performSegueWithIdentifier("forgotPasswordDoneSegue", sender: self)
+        })
+
+
+
         
     }
     

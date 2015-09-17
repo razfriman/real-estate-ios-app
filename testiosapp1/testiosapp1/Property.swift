@@ -9,20 +9,24 @@
 import Foundation
 
 final class Property: ResponseObjectSerializable, ResponseCollectionSerializable {
-    let title: String?
-    let address: String
-    let city: String
-    let value: Int
-    let totalRentPaid: Int
-    let monthsPaid: Int
-    let rentPayment: Int
-    let returnOnInvestment: Int
-    let image: String
-    let dateLastPaid: String
-    let tenant: Tenant?
+    var title: String = ""
+    var address: String = ""
+    var city: String = ""
+    var value: Int = 0
+    var totalRentPaid: Int = 0
+    var monthsPaid: Int = 0
+    var rentPayment: Int = 0
+    var returnOnInvestment: Int = 0
+    var image: String = ""
+    var dateLastPaid: String = ""
+    var tenant: Tenant?
+    
+    init() {
+        
+    }
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
-        self.title = representation.valueForKeyPath("title") as! String?
+        self.title = representation.valueForKeyPath("title") as! String
         self.address = representation.valueForKeyPath("address") as! String
         self.city = representation.valueForKeyPath("city") as! String
         self.value = representation.valueForKeyPath("value") as! Int

@@ -15,6 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         
+        
         // Load email from the keychain
         if let email = ApiManager.sharedInstance.loadFromKeychain(ApiManager.EMAIL_KEY_NAME) {
             emailTextField.text = email
@@ -31,13 +32,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         if(!validateEmail(emailTextField.text)) {
             // Invalid email
-            showAlertMessage("Error", message: "Invalid email address")
+            SCLAlertView().showError("Invalid email address", subTitle: "")
             return false
         }
         
         if(passwordTextField.text == nil || passwordTextField.text?.characters.count == 0) {
             // Password is required
-            showAlertMessage("Error", message: "Password is required")
+            SCLAlertView().showError("Password is required", subTitle: "")
             return false
         }
         
@@ -58,6 +59,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 switch(result) {
                 case .Success:
                     // Successful login
+                    //HIDE
                     
                     // Save the JWT token to the keychain
                     let json = result.value as? NSDictionary // info will be nil if it's not an NSDictionary
@@ -80,7 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     print(error)
                     // Invalid email/password
-                    self.showAlertMessage("Error", message: "Invalid email/password")
+                    SCLAlertView().showError("Invalid email/password", subTitle: "")
                 }
         }
     }

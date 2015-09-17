@@ -60,7 +60,8 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
                         
                     case .Failure(_, let error):
                         print(error)
-                        self.showAlertMessage("ERROR", message: "Cannot Load Properties")
+                        
+                        SCLAlertView().showError("Cannot Load Properties", subTitle: "")
                         
                         // Reload the table data
                         self.tableView.reloadData()

@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController {
                         }
                     case .Failure(_, let error):
                         print(error)
-                        self.showAlertMessage("ERROR", message: "Cannot Load User")
+                        SCLAlertView().showError("Cannot load user", subTitle: "")
                 }
             }
         }

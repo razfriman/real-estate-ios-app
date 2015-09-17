@@ -20,6 +20,17 @@ class AddPropertyViewController: UITableViewController {
     }
     
     func addPropertyDone(sender: UIBarButtonItem) {
-        print("Save property!!!")
+        if let userId = ApiManager.sharedInstance.loadFromKeychain(ApiManager.USER_ID_KEY_NAME) {
+            let property = createPropertyFromUI()
+            ApiManager.sharedInstance.addProperty(userId, property: property)
+        }
+    }
+    
+    func createPropertyFromUI() -> Property {
+        let property: Property = Property()
+        
+        // TODO - Populate with info from UI
+        
+        return property
     }
 }
