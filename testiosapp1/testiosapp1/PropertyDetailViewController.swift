@@ -16,7 +16,9 @@ class PropertyDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        
+        if property != nil {
+            
         titleLabel.text = property!.title
         addressLabel.text = property!.address
         cityLabel.text = property!.city
@@ -39,6 +41,7 @@ class PropertyDetailViewController: UIViewController {
                 self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
                 self.centerMapOnLocation(placemark.location!)
             }   
+        }
         }
         
         

@@ -76,6 +76,18 @@ class ApiManager: NSObject {
         return apiRequest
     }
     
+    func addProperty(userId: String, property: Property) {
+        // TODO
+    }
+    
+    func editProperty(usedId: String, property: Property) {
+        // TODO
+    }
+    
+    func deleteProperty(usedId: String, property: Property) {
+        // TODO
+    }
+    
     
     func saveToKeychain(key: String, value: String) {
         let keychain = Keychain(service: KEYCHAIN_NAME)

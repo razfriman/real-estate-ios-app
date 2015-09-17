@@ -11,12 +11,27 @@ import UIKit
 
 class PropertiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
-    
-    //let data = ["5600 SMU Blvd","8088 Park Ln","4704 Abbot Ave"]
-    let percents = [0.25, 1.0, 0.80]
     var data = [Property]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Connect the refresh control
+        self.tableView.addSubview(self.refreshControl)
+        handleRefresh(refreshControl)
+
+        // Add a "+" UIBarButtonItem to add a new property
+        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "handleTableViewAdd:")
+        self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    func handleTableViewAdd(sender: UIBarButtonItem) {
+        // Add a new property
+        performSegueWithIdentifier("addPropertySegue", sender: self)
+    }
+    
+    // Lazy instaniate a UIRefreshControl for "pull-to-refresh"
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
@@ -28,6 +43,7 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
         // Reload data
         if let userId = ApiManager.sharedInstance.loadFromKeychain(ApiManager.USER_ID_KEY_NAME) {
             
+            // Load the user properties
             ApiManager.sharedInstance.loadUserProperties(userId)
                 .validate()
                 .responseCollection { (_, _, result: Result<[Property]>) in
@@ -38,6 +54,7 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
                             self.data = properties
                         }
                         
+                        // Reload the table data
                         self.tableView.reloadData()
                         refreshControl.endRefreshing()
                         
@@ -45,6 +62,7 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
                         print(error)
                         self.showAlertMessage("ERROR", message: "Cannot Load Properties")
                         
+                        // Reload the table data
                         self.tableView.reloadData()
                         refreshControl.endRefreshing()
                         
@@ -53,14 +71,9 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.tableView.addSubview(self.refreshControl)
-        handleRefresh(refreshControl)
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Number of properties
         return self.data.count;
     }
     
@@ -69,6 +82,7 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
         
         let property = data[indexPath.row]
         
+        // Load the cell with data
         let cell = tableView.dequeueReusableCellWithIdentifier("propertyCell", forIndexPath: indexPath) as! PropertyCell
         cell.addressLabel.text = property.address
         cell.titleLabel.text = property.title ?? property.address
@@ -86,12 +100,11 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        print("Selected: \(indexPath.row)")
-        
+        // Show the property details
         performSegueWithIdentifier("showPropertyDetailSegue", sender: self)
         
+        // Deselect the row on the table
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -102,6 +115,8 @@ class PropertiesViewController: UIViewController, UITableViewDataSource, UITable
             let property = data[selectedIndex]
             let detailVC = segue.destinationViewController as? PropertyDetailViewController
             detailVC?.property = property
+        } else if (segue.identifier == "addPropertySegue") {
+            // Nothing
         }
     }
     

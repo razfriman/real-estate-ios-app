@@ -15,6 +15,7 @@
 		F80781041B9A0E4600D04150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80781031B9A0E4600D04150 /* Images.xcassets */; };
 		F80781071B9A0E4600D04150 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80781051B9A0E4600D04150 /* LaunchScreen.xib */; };
 		F807BAA71BA7996700D44BF6 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F807BAA61BA7996700D44BF6 /* Keychain.swift */; settings = {ASSET_TAGS = (); }; };
+		F81C934D1BAA001D00B71BC0 /* AddPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81C934C1BAA001D00B71BC0 /* AddPropertyViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F84A38B71BA997C0007C3A58 /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84A38B61BA997C0007C3A58 /* PropertyCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F855731D1BA9A1A3008D9CB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F855731C1BA9A1A3008D9CB4 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		F85573201BA9A354008D9CB4 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F855731F1BA9A354008D9CB4 /* ViewControllerExtensions.swift */; settings = {ASSET_TAGS = (); }; };
@@ -55,6 +56,7 @@
 		F80781061B9A0E4600D04150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F807BAA61BA7996700D44BF6 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F807BAA81BA7997100D44BF6 /* KeychainAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainAccess.h; sourceTree = "<group>"; };
+		F81C934C1BAA001D00B71BC0 /* AddPropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPropertyViewController.swift; sourceTree = "<group>"; };
 		F84A38B61BA997C0007C3A58 /* PropertyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
 		F855731C1BA9A1A3008D9CB4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F855731F1BA9A354008D9CB4 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				F8C479A21BA60FB800571091 /* SignupViewController.swift */,
 				F894ABBC1BA84B4C00F318A9 /* MainTabBarController.swift */,
 				F8CBD5091BA9DFD800EAF4A3 /* PropertyDetailViewController.swift */,
+				F81C934C1BAA001D00B71BC0 /* AddPropertyViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				F89F67D11BA7640D0064A7B6 /* ApiManager.swift in Sources */,
 				F888E6EF1BA7651D0041F1B2 /* Error.swift in Sources */,
 				F807BAA71BA7996700D44BF6 /* Keychain.swift in Sources */,
+				F81C934D1BAA001D00B71BC0 /* AddPropertyViewController.swift in Sources */,
 				F80780FD1B9A0E4600D04150 /* AppDelegate.swift in Sources */,
 				F8C479A51BA6139000571091 /* ProfileViewController.swift in Sources */,
 				F85573201BA9A354008D9CB4 /* ViewControllerExtensions.swift in Sources */,
@@ -451,6 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "razfriman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyRealEstate;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -466,6 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "razfriman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyRealEstate;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

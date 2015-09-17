@@ -9,6 +9,8 @@
 import UIKit
 class ProfileViewController: UIViewController {
     
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,9 +23,10 @@ class ProfileViewController: UIViewController {
                     
                     switch(result) {
                     case .Success:
-                        print(result)
+                        
                         if let user = result.value {
-                             self.emailLabel.text = user.email
+                            self.user = user
+                            self.emailLabel.text = user.email
                             self.nameLabel.text = "\(user.firstName) \(user.lastName)"
                             
                         }
