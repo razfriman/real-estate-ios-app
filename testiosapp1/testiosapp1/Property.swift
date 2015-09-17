@@ -33,7 +33,6 @@ final class Property: ResponseObjectSerializable, ResponseCollectionSerializable
         self.image = representation.valueForKeyPath("image") as! String
         self.dateLastPaid = representation.valueForKeyPath("dateLastPaid") as! String
         
-        // TODO - Load as a new model
         let tenantArrayData = representation.valueForKeyPath("tenant") as! NSArray
         let tenantData = tenantArrayData[0]
         self.tenant = Tenant(response: response, representation: tenantData)
@@ -52,5 +51,22 @@ final class Property: ResponseObjectSerializable, ResponseCollectionSerializable
         }
         
         return items
+    }
+    
+    
+    func toDictionary() -> NSDictionary {
+        let dict : NSDictionary = NSDictionary()
+        dict.setValue(title, forKey: "title")
+        dict.setValue(address, forKey: "address")
+        dict.setValue(image, forKey: "image")
+        dict.setValue(city, forKey: "city")
+        dict.setValue(value, forKey: "value")
+        dict.setValue(totalRentPaid, forKey: "totalRentPaid")
+        dict.setValue(monthsPaid, forKey: "monthsPaid")
+        dict.setValue(rentPayment, forKey: "rentPayment")
+        dict.setValue(returnOnInvestment, forKey: "returnOnInvestment")
+        dict.setValue(dateLastPaid, forKey: "dateLastPaid")
+        dict.setValue(tenant?.toDictionary(), forKey: "value")
+        return dict
     }
 }

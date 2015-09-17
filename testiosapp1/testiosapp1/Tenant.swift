@@ -21,6 +21,15 @@ final class Tenant: ResponseObjectSerializable {
         self.image = representation.valueForKeyPath("image") as! String
         self.firstName = representation.valueForKeyPath("firstName") as! String
         self.lastName = representation.valueForKeyPath("lastName") as! String
-        
+    }
+    
+    func toDictionary() -> NSDictionary {
+        let dict : NSDictionary = NSDictionary()
+        dict.setValue(email, forKey: "email")
+        dict.setValue(phoneNumber, forKey: "phoneNumber")
+        dict.setValue(image, forKey: "image")
+        dict.setValue(firstName, forKey: "firstName")
+        dict.setValue(lastName, forKey: "lastName")
+        return dict
     }
 }
