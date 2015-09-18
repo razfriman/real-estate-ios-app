@@ -14,17 +14,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        
         // Load email from the keychain
         if let email = ApiManager.sharedInstance.loadFromKeychain(ApiManager.EMAIL_KEY_NAME) {
             emailTextField.text = email
         }
+        // Set login button to enabled
+        setStateForLoginButton(true)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setStateForLoginButton(enabled: Bool) {
+        self.loginButton.enabled = enabled
+        self.loginButton.alpha = enabled ? 1.0 : 0.5
     }
     
     func checkValidInputFields() -> Bool {
@@ -47,7 +52,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginClicked(sender: AnyObject) {
         
+        setStateForLoginButton(false)
+        
         if(!checkValidInputFields()) {
+            setStateForLoginButton(true)
             return
         }
         
@@ -75,6 +83,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     // Clear the password text
                     self.passwordTextField.text = ""
                     
+                    // Reenable the button
+                    self.setStateForLoginButton(true)
+                    
                     // Perform the segue to move to the main screen of the app
                     self.setRootViewController("MainTabBarController")
                     
@@ -83,6 +94,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print(error)
                     // Invalid email/password
                     SCLAlertView().showError("Invalid email/password", subTitle: "")
+                    
+                    // Reenable the button
+                    self.setStateForLoginButton(true)
                 }
         }
     }
@@ -112,9 +126,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBOutlet var loginButton: UIButton!
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
 }

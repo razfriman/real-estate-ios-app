@@ -54,7 +54,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaB-kb-1Oy">
                                 <rect key="frame" x="16" y="271" width="568" height="49"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.071442362628372225" green="0.53901042885786088" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.4431372549" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="6KV-at-uf6"/>
                                 </constraints>
@@ -117,6 +117,7 @@
                     <navigationItem key="navigationItem" id="2jd-2y-lka"/>
                     <connections>
                         <outlet property="emailTextField" destination="I4O-qL-vOx" id="b6H-eU-VsX"/>
+                        <outlet property="loginButton" destination="ZaB-kb-1Oy" id="ghI-dI-8po"/>
                         <outlet property="passwordTextField" destination="v92-bR-AQM" id="g82-1g-ItQ"/>
                         <segue destination="aGU-3q-don" kind="unwind" identifier="loginDoneSegue" unwindAction="unwindToMainScreen:" id="Btv-ca-ZNT"/>
                     </connections>
@@ -900,6 +901,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="QCP-yP-UbO" id="3pL-B2-Luf"/>
                         <outlet property="passwordTextField" destination="nuc-Tk-8v4" id="bAm-aF-f9p"/>
+                        <outlet property="signupButton" destination="c2p-ej-PZg" id="NBZ-0E-fab"/>
                         <segue destination="dq6-mm-Wrh" kind="unwind" identifier="signupDoneSegue" unwindAction="unwindToMainScreen:" id="72k-D4-sVq"/>
                     </connections>
                 </viewController>
@@ -989,6 +991,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="S5w-5d-DMq" id="yPK-J8-BN0"/>
+                        <outlet property="resetPasswordButton" destination="icm-eU-asC" id="mDX-fx-0qs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kw9-WQ-3tH" userLabel="First Responder" sceneMemberID="firstResponder"/>

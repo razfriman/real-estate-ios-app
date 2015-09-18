@@ -32,12 +32,20 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func setStateForSignupButton(enabled: Bool) {
+        self.signupButton.enabled = enabled
+        self.signupButton.alpha = enabled ? 1.0 : 0.5
+    }
+    
     
     
     @IBAction func signupClicked(sender: AnyObject) {
         
+        setStateForSignupButton(false)
+        
         if(!checkValidInputFields()) {
             // Ensure the input is valid
+            setStateForSignupButton(true)
             return
         }
         
@@ -56,6 +64,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 case .Failure(_, let error):
                     
                     // Error while registering
+                    self.setStateForSignupButton(true)
                     print(error)
                     SCLAlertView().showError("Cannot register", subTitle: "TODO - Get message for why registration failed")
                 }
@@ -82,10 +91,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     ApiManager.sharedInstance.saveToKeychain(ApiManager.USER_ID_KEY_NAME, value: userId!)
                     ApiManager.sharedInstance.saveToKeychain(ApiManager.EMAIL_KEY_NAME, value: email!)
                     
+                    // Reenable the signup button
+                    self.setStateForSignupButton(true)
+                    
                     // Perform the segue to move to the main screen of the app
                     self.setRootViewController("MainTabBarController")
                     
                 case .Failure(_, let error):
+                    
+                    // Reenable the signup button
+                    self.setStateForSignupButton(true)
                     
                     // Invalid email/password
                     print(error)
@@ -122,9 +137,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    @IBOutlet var signupButton: UIButton!
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
 }

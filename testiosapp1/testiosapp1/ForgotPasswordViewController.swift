@@ -20,6 +20,12 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func setStateForForgotPasswordButton(enabled: Bool) {
+        self.resetPasswordButton.enabled = enabled
+        self.resetPasswordButton.alpha = enabled ? 1.0 : 0.5
+    }
+
+    
     func checkValidInputFields() -> Bool {
         
         if(!validateEmail(emailTextField.text)) {
@@ -43,15 +49,18 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func resetPasswordClicked(sender: AnyObject) {
         
+        setStateForForgotPasswordButton(false)
+        
         if(!checkValidInputFields()) {
+            setStateForForgotPasswordButton(true)
             return
         }
         
-
+        self.view.endEditing(true)
         
-        // TODO - ADD DISMISS HANDLER
         let alert = SCLAlertView().showSuccess("Password reset", subTitle: "An email to reset your password has been sent to \(emailTextField.text!)")
         alert.setDismissBlock({() -> Void in
+            self.setStateForForgotPasswordButton(true)
         self.performSegueWithIdentifier("forgotPasswordDoneSegue", sender: self)
         })
 
@@ -63,6 +72,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    @IBOutlet var resetPasswordButton: UIButton!
     
     @IBOutlet weak var emailTextField: UITextField!
 }
